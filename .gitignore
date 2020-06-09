@@ -1,2 +1,8 @@
 
 .vs/DiscordSpoilerMessageV2/v16/.suo
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
