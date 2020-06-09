@@ -1,0 +1,10 @@
+C:\Users\nephi\source\repos\DiscordSpoilerMessageV2\DiscordSpoilerMessageV2\bin\Debug\DiscordSpoilerMessageV2.exe.config
+C:\Users\nephi\source\repos\DiscordSpoilerMessageV2\DiscordSpoilerMessageV2\bin\Debug\DiscordSpoilerMessageV2.exe
+C:\Users\nephi\source\repos\DiscordSpoilerMessageV2\DiscordSpoilerMessageV2\bin\Debug\DiscordSpoilerMessageV2.pdb
+C:\Users\nephi\source\repos\DiscordSpoilerMessageV2\DiscordSpoilerMessageV2\obj\Debug\DiscordSpoilerMessageV2.csprojAssemblyReference.cache
+C:\Users\nephi\source\repos\DiscordSpoilerMessageV2\DiscordSpoilerMessageV2\obj\Debug\DiscordSpoilerMessageV2.Form1.resources
+C:\Users\nephi\source\repos\DiscordSpoilerMessageV2\DiscordSpoilerMessageV2\obj\Debug\DiscordSpoilerMessageV2.Properties.Resources.resources
+C:\Users\nephi\source\repos\DiscordSpoilerMessageV2\DiscordSpoilerMessageV2\obj\Debug\DiscordSpoilerMessageV2.csproj.GenerateResource.cache
+C:\Users\nephi\source\repos\DiscordSpoilerMessageV2\DiscordSpoilerMessageV2\obj\Debug\DiscordSpoilerMessageV2.csproj.CoreCompileInputs.cache
+C:\Users\nephi\source\repos\DiscordSpoilerMessageV2\DiscordSpoilerMessageV2\obj\Debug\DiscordSpoilerMessageV2.exe
+C:\Users\nephi\source\repos\DiscordSpoilerMessageV2\DiscordSpoilerMessageV2\obj\Debug\DiscordSpoilerMessageV2.pdb
