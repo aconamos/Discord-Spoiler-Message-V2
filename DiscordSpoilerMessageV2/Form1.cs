@@ -49,12 +49,42 @@ namespace DiscordSpoilerMessageV2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(finalputt);
+            if (textBox1.Text == "") 
+            {
+                textBox2.Text = "Error: cannot input nothing";
+            } else
+            {
+                Clipboard.SetText(finalputt);
+
+                if (textBox3.Text == finalputt)
+                {
+                }
+                else
+                {
+                    textBox3.Text = finalputt;
+                }
+            }
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (textBox3.Text == "") 
+            {
+                textBox3.Text = "Error: no text in history";
+            } else
+            {
+                Clipboard.SetText(textBox3.Text);
+            }
         }
     }
 }
