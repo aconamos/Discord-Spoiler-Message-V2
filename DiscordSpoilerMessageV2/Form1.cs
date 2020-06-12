@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace DiscordSpoilerMessageV2
 {
@@ -16,6 +17,24 @@ namespace DiscordSpoilerMessageV2
         public string inputt;
         private string finalputt;
         private string outputt;
+        public byte historyTileCount = 0;
+        // List<newHistoryTile> historyTileList = new newHistoryTile();
+
+        private void addToLogBox(string inMsg)
+        {
+            logBox.AppendText(inMsg + "\r\n");
+        }
+
+        private bool areTheyEqual(string in1, string in2)
+        {
+            if (in1 == in2)
+            {
+                return true;
+            } else
+            {
+                return false;
+            }
+        }
 
         private string CalcFinal(string inputt)
         {
@@ -29,6 +48,7 @@ namespace DiscordSpoilerMessageV2
             return outputt;
                 
         }
+
 
         public Form1()
         {
@@ -49,20 +69,13 @@ namespace DiscordSpoilerMessageV2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "") 
-            {
-                textBox2.Text = "Error: cannot input nothing";
-            } else
+            if(!string.IsNullOrEmpty(finalputt))
             {
                 Clipboard.SetText(finalputt);
+            } else
+            {
+                addToLogBox(DateTime.Now + ": Error: Could not copy nothing to clipboard. Occurred: Copying initial text box input.");
 
-                if (textBox3.Text == finalputt)
-                {
-                }
-                else
-                {
-                    textBox3.Text = finalputt;
-                }
             }
         }
 
@@ -76,15 +89,17 @@ namespace DiscordSpoilerMessageV2
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void logBox_TextChanged(object sender, EventArgs e)
         {
-            if (textBox3.Text == "") 
-            {
-                textBox3.Text = "Error: no text in history";
-            } else
-            {
-                Clipboard.SetText(textBox3.Text);
-            }
+
+        }
+    }
+    
+    public class newHistoryTile,,,,
+    {
+        public newHistoryTile(byte historyTileCount)
+        {
+             
         }
     }
 }
