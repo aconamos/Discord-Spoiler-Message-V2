@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,12 +18,13 @@ namespace DiscordSpoilerMessageV2
         public string inputt;
         private string finalputt;
         private string outputt;
-        public byte historyTileCount = 0;
-        // List<newHistoryTile> historyTileList = new newHistoryTile();
+        public int historyTileCount = 0;
+        public List<HistoryTile> historyTileList = new List<HistoryTile>();
+        public HistoryTile test1 = new HistoryTile();
 
         private void addToLogBox(string inMsg)
         {
-            logBox.AppendText(inMsg + "\r\n");
+            logBox.AppendText(DateTime.Now + " " + inMsg + "\r\n");
         }
 
         private bool areTheyEqual(string in1, string in2)
@@ -49,10 +51,23 @@ namespace DiscordSpoilerMessageV2
                 
         }
 
+        private void ClipboardTextCheckAndSet(string in1)
+        {
+            if(!string.IsNullOrEmpty(in1))
+            {
+                Clipboard.SetText(in1);
+            } else
+            {
+                addToLogBox("Error: Cannot copy null or empty to clipboard.");
+            }
+        }
+
 
         public Form1()
         {
             InitializeComponent();
+            
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -69,14 +84,7 @@ namespace DiscordSpoilerMessageV2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(!string.IsNullOrEmpty(finalputt))
-            {
-                Clipboard.SetText(finalputt);
-            } else
-            {
-                addToLogBox(DateTime.Now + ": Error: Could not copy nothing to clipboard. Occurred: Copying initial text box input.");
-
-            }
+            ClipboardTextCheckAndSet(finalputt);
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -93,13 +101,62 @@ namespace DiscordSpoilerMessageV2
         {
 
         }
-    }
-    
-    public class newHistoryTile,,,,
-    {
-        public newHistoryTile(byte historyTileCount)
+
+        private void setBounds(byte count)
         {
-             
+           // historyTileList[count].button1.Location.X = 12;
+
+        }
+
+        private void RemoveHistoryTileButton_Click(object sender, EventArgs e)
+        {
+            if(historyTileCount == 0)
+            {
+                addToLogBox("Error: Cannot have negative amount of history tiles");
+            } else
+            {
+                historyTileCount--;
+            }
+        }
+
+        private void AddHistoryTileButton_Click(object sender, EventArgs e)
+        {
+            if(historyTileCount == 5)
+            {
+                addToLogBox("Error: Cannot have more than 5 history tiles");
+            } else
+            {
+                historyTileCount++;
+            }
+            
+            
         }
     }
+
+    public class HistoryTile : Form
+    {
+        new Button button1 = new Button();
+        new TextBox textBox = new TextBox();
+        public HistoryTile()
+        {
+            button1.Location = new Point(12, 60);
+            button1.Size = new Size(195, 46);
+            button1.Text = "Copy Text to Clipboard";
+            textBox.ReadOnly = true;
+            Controls.Add(this.button1);
+            Controls.Add(this.textBox);
+        }
+        private string text;
+        private void button1_click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(this.text);
+        }
+
+        private void HistoryTile_load(object sender, EventArgs e)
+        {
+            button1.Visible = true;
+        }
+
+    }
+    
 }

@@ -33,13 +33,15 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.logBox = new System.Windows.Forms.TextBox();
+            this.AddHistoryTileButton = new System.Windows.Forms.Button();
+            this.RemoveHistoryTileButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(12, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(195, 47);
+            this.button1.Size = new System.Drawing.Size(195, 46);
             this.button1.TabIndex = 0;
             this.button1.Text = "Copy Text to Clipboard";
             this.button1.UseVisualStyleBackColor = true;
@@ -55,10 +57,10 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(214, 38);
+            this.textBox2.Location = new System.Drawing.Point(213, 38);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(574, 20);
+            this.textBox2.Size = new System.Drawing.Size(575, 20);
             this.textBox2.TabIndex = 2;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -73,11 +75,33 @@
             this.logBox.TabIndex = 5;
             this.logBox.TextChanged += new System.EventHandler(this.logBox_TextChanged);
             // 
+            // AddHistoryTileButton
+            // 
+            this.AddHistoryTileButton.Location = new System.Drawing.Point(678, 309);
+            this.AddHistoryTileButton.Name = "AddHistoryTileButton";
+            this.AddHistoryTileButton.Size = new System.Drawing.Size(110, 24);
+            this.AddHistoryTileButton.TabIndex = 6;
+            this.AddHistoryTileButton.Text = "Add History Tile";
+            this.AddHistoryTileButton.UseVisualStyleBackColor = true;
+            this.AddHistoryTileButton.Click += new System.EventHandler(this.AddHistoryTileButton_Click);
+            // 
+            // RemoveHistoryTileButton
+            // 
+            this.RemoveHistoryTileButton.Location = new System.Drawing.Point(562, 309);
+            this.RemoveHistoryTileButton.Name = "RemoveHistoryTileButton";
+            this.RemoveHistoryTileButton.Size = new System.Drawing.Size(110, 24);
+            this.RemoveHistoryTileButton.TabIndex = 7;
+            this.RemoveHistoryTileButton.Text = "Remove History Tile";
+            this.RemoveHistoryTileButton.UseVisualStyleBackColor = true;
+            this.RemoveHistoryTileButton.Click += new System.EventHandler(this.RemoveHistoryTileButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.RemoveHistoryTileButton);
+            this.Controls.Add(this.AddHistoryTileButton);
             this.Controls.Add(this.logBox);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -97,6 +121,8 @@
         public System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox logBox;
+        private System.Windows.Forms.Button AddHistoryTileButton;
+        private System.Windows.Forms.Button RemoveHistoryTileButton;
     }
 }
 
