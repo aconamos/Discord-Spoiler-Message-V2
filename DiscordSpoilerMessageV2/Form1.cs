@@ -110,7 +110,6 @@ namespace DiscordSpoilerMessageV2
                 addToLogBox("History tile removed!");
             }
         }
-        
         private void AddHistoryTileButton_Click(object sender, EventArgs e)
         {
             if(historyTileCount == 5)
@@ -119,11 +118,11 @@ namespace DiscordSpoilerMessageV2
             } else
             {
                 historyTileList.Add(new HistoryTile());
-                historyTileList[historyTileCount].button1.Location = new Point(12, 58 + (46 * historyTileCount));
+                historyTileList[historyTileCount].historyTileButton.Location = new Point(12, 58 + (46 * historyTileCount));
                 historyTileList[historyTileCount].textBox.Location = new Point(213, 13 + 58 + (46 * historyTileCount));
+                //historyTileList[historyTileCount].button1.Click += butt_Click;
                 Controls.Add(historyTileList[historyTileCount].textBox);
-                Controls.Add(historyTileList[historyTileCount].button1);
-                historyTileList[historyTileCount].button1.Click += new EventHandler(historyTileList[historyTileCount].button1_Click);
+                Controls.Add(historyTileList[historyTileCount].historyTileButton);
                 historyTileCount++;
                 addToLogBox("New history tile added!");
             }
@@ -131,22 +130,28 @@ namespace DiscordSpoilerMessageV2
         }
     }
 
+    public class ButtonInfoClick : Form1
+    {
+
+    }
+
     public class HistoryTile : Form1
     {
-        public new Button button1 = new Button();
-        public new TextBox textBox = new TextBox();
+        public Button historyTileButton = new Button();
+        public TextBox textBox = new TextBox();
         public HistoryTile()
         {
-            button1.Size = new Size(195, 46);
-            button1.Text = "Copy Text to Clipboard";
+            historyTileButton.Size = new Size(195, 46);
+            historyTileButton.Text = "Copy Text to Clipboard";
             textBox.Size = new Size(575, 20);
             textBox.ReadOnly = true;
+            this.historyTileButton.Click += new EventHandler(historyTileButton_Click);
         }
-        public string text;
-        public void button1_Click(object sender, EventArgs e)
+        public string msg;
+        public void historyTileButton_Click(object sender, EventArgs e)
         {
-            addToLogBox("this indicates success");
-            ClipboardTextCheckAndSet(this.text);
+            addToLogBox("pressed");
+            ClipboardTextCheckAndSet(this.msg);
         }
 
     }
